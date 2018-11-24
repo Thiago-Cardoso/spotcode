@@ -17,5 +17,5 @@ class DashboardController < ApplicationController
     @recommended_albums = Album.joins(:category, :songs).where(category: heard_categories).order("songs.played_count")
                                .select("distinct albums.*").limit(4)
   end
-  
+
 end
